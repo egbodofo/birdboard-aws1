@@ -11,16 +11,15 @@ after_success:
   - docker build -t egbodofo/birdboard-aws-app .
   - echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin
   - docker push egbodofo/birdboard-aws-app
-# deploy:
-#   provider: elasticbeanstalk
-#   region: us-east-1
-#   app: birdboard
-#   env: Birdboard-env
-#   bucket_name: elasticbeanstalk-us-east-1-292676312213
-#   bucket_path: birdboard-cli
-#   on:
-#     branch: master
-#   access_key_id: $AWS_ACCESS_ID
-#   secret_access_key:
-#     secure: $AWS_SECRET_KEY
-# test
+deploy:
+  provider: elasticbeanstalk
+  region: us-east-1
+  app: birdboard
+  env: Birdboard-env
+  bucket_name: elasticbeanstalk-us-east-1-008951252297
+  bucket_path: birdboard-cli
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_ID
+  secret_access_key:
+    secure: $AWS_SECRET_KEY
