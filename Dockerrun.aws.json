@@ -1,0 +1,26 @@
+{
+    "AWSEBDockerrunVersion": 2,
+    "containerDefinitions": [
+        {
+            "name": "birdboard",
+            "image": "papiyinks/birdboard-app",
+            "hostname": "app",
+            "memory": 512,
+            "essential": false
+        },
+        {
+            "name": "nginx",
+            "image": "papiyinks/birdboard-nginx",
+            "hostname": "web",
+            "memory": 128,
+            "essential": true,
+            "portMappings": [
+                {
+                    "hostPort": 80,
+                    "containerPort": 80
+                }
+            ],
+            "links": ["birdboard"]
+        }
+    ]
+}
