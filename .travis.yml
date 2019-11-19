@@ -12,6 +12,7 @@ after_success:
   - echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin
   - docker push egbodofo/birdboard-aws-app
 deploy:
+  edge: true
   provider: elasticbeanstalk
   region: us-east-1
   app: birdboard
