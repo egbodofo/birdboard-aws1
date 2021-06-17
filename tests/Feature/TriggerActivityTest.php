@@ -96,7 +96,6 @@ class TriggerActivityTest extends TestCase
     /** @test */
     function incompleting_a_task()
     {
-        // $this->withoutExceptionHandling();
         $project = ProjectFactory::withTasks(1)->create();
 
         $this->actingAs($project->owner)

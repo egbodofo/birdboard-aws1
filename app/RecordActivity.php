@@ -35,7 +35,6 @@ trait RecordActivity
 
                 });
             }
-    
         }
     }
 
@@ -113,8 +112,6 @@ trait RecordActivity
 
                 'after' => array_except($this->getChanges(), 'updated_at')
             ];
-
         }
-    
     }
 }

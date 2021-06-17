@@ -20,8 +20,6 @@ class ProjectsController extends Controller
     {    
         $this->authorize('update', $project);
         $project__ = Project::find($project->id);
-        // dd($project__, $project__->activity);
-        // dd($project->activity);
 
         return view('projects.show', compact('project'));
     }
@@ -68,9 +66,9 @@ class ProjectsController extends Controller
     
     {
         $this->authorize('manage', $project);
-
+        
         $project->delete();
-    
+
         return redirect('/projects');
     
     }
